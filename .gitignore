@@ -6,3 +6,4 @@ admin.conf
 kubeconfig
 *.key
 *.crt
+backend.env.local
