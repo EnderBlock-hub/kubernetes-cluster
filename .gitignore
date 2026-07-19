@@ -1,0 +1,8 @@
+.env
+.env.local
+*.local.yaml
+*.secret.env
+admin.conf
+kubeconfig
+*.key
+*.crt
