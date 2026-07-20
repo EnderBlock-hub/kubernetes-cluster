@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+
+metadata:
+  name: frontend-to-backend
+  namespace: homework
+
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: backend
+
+  policyTypes:
+  - Ingress
+
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/name: frontend
+
+    ports:
+    - protocol: TCP
+      port: 8080
